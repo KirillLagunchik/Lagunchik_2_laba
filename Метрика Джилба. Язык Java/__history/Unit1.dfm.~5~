@@ -1,0 +1,53 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = #1052#1077#1090#1088#1080#1082#1072' '#1044#1078#1080#1083#1073#1072'. '#1071#1079#1099#1082' Java. '#1051#1072#1075#1091#1085#1095#1080#1082
+  ClientHeight = 454
+  ClientWidth = 421
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 72
+    Top = 384
+    Width = 31
+    Height = 13
+    Caption = 'Label1'
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 8
+    Width = 81
+    Height = 33
+    Caption = 'Open file'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Memo1: TMemo
+    Left = 8
+    Top = 64
+    Width = 405
+    Height = 227
+    ScrollBars = ssBoth
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 8
+    Top = 312
+    Width = 81
+    Height = 33
+    Caption = 'Test'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 96
+    Top = 8
+  end
+end

@@ -1,0 +1,50 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Memo1: TMemo;
+    OpenDialog1: TOpenDialog;
+    Label1: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  FileName1:Text;
+  Text:array of char;
+  CountText:integer;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+    if OpenDialog1.Execute then
+    begin
+       AssignFile(FileName1,OpenDialog1.FileName);
+       Reset(FileName1);
+       CountText:=0;
+       while not(eof(FileName1)) do
+       begin
+          inc(CountText);
+          setlength(Text,CountText);
+          read(FileName1,Text[CountText-1]);
+       end;
+       memo1.lines.LoadFromFile(OpenDialog1.FileName);
+       CloseFile(FileName1);
+    end;
+end;
+
+end.
